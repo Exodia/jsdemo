@@ -10,7 +10,12 @@
    "permissions": [
     "notifications"
   ],
+  
+  "background":{
+    	"scripts": ["background.js"]
+   },
+  
   "web_accessible_resources": [
     "icon.png"
-  ],
+  ]
 }

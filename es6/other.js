@@ -7,7 +7,7 @@
  */
 
 /*默认参数演示*/
-function Widget(config = {skinType:1}) {
+function Widget(config = 1) {
     console.log(config);
 }
 Widget();

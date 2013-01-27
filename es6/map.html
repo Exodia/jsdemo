@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="map.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+    var body = document.body,
+        html = document.documentElement;
+    var test = new Map([[body, 'body'], [html, 'html']]);
+    test.set('test', '111');
+
+    test.set(+0, '+0');
+    test.set(-0, '-0');
+  //  test.set(NaN, 'NaN');
+    test.forEach(function(v, k, map) {
+        console.log("Key:" + k + ' = Value: ' + v);
+    })
+
+</script>
+</body>
+</html>

@@ -7,8 +7,8 @@ void function() {
 			"close": 1,
 			"click": 1
 		};
-	
-	
+
+
 	/**
 	 *调用例子： 
 	 * var DN = window.XX.DesktopNotify;
@@ -17,7 +17,7 @@ void function() {
 	 * });
 	 */	
 	var DesktopNotify = {
-		
+
 		/**
 		 *检测是否支持Notification，支持返回true 
 		 */
@@ -37,7 +37,7 @@ void function() {
 			_instance.show();
 		},
 
-		
+
 		/**
 		 *弹出一个 HTML桌面通知
 		 *
@@ -58,7 +58,7 @@ void function() {
 			_instance && _instance.close();
 			cb && cb();
 		},
-		
+
 		/**
 		 * 释放通知对话框引用
 		 */
@@ -74,7 +74,7 @@ void function() {
 		checkPermission : function() {
 			return _permissionStatus = webkitNotifications.checkPermission();
 		},
-		
+
 		/**
 		 * 检查是否得到授权
 		 * @return {Boolean}： true表示得到授权
@@ -82,8 +82,8 @@ void function() {
 		isPermitted: function() {
 			return this.checkPermission() === 0;
 		},
-		
-		
+
+
 		/**
 		 * 请求授权
  		 * @param {Object} cb：得到授权后的回调函数
@@ -95,7 +95,7 @@ void function() {
 				webkitNotifications.requestPermission(cb);
 			}
 		},
-		
+
 		/**
 		 * 创建一个文本性质的通知对话框，但不展示
  		 * @param {Object} iconURL
@@ -106,7 +106,7 @@ void function() {
 		create: function(iconURL, title, content) {
 			return webkitNotifications.createNotification(iconURL, title, content);
 		},
-		
+
 		/**
 		 * 创建一个HTML性质的通知对话框，但不展示
  		 * @param {Object} url: 指向html页面的链接
@@ -115,7 +115,7 @@ void function() {
 		createHTML: function(url) {
 			return webkitNotifications.createHTMLNotification(url);
 		},
-		
+
 		/**
 		 * 添加事件监听函数
  		 * @param {Object} type: 事件类型
@@ -124,7 +124,7 @@ void function() {
 		on: function(type, fn) {
 			_eventTable[type] && _instance && _instance.addEventListener(type, fn, false); 
 		},
-		
+
 		/**
 		 * 移除事件监听函数
  		 * @param {Object} type: 事件类型
